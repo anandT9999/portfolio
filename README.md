@@ -4,7 +4,7 @@
 
 **Backend Engineer · Project Lead at Arcitech**
 
-FastAPI and Node.js services, cloud pipelines on AWS, and a few Revit integrations, growing toward system design and backend architecture.
+FastAPI and Node.js services, RAG agents and Revit integrations, growing toward system design and backend architecture.
 
 [![Live site](https://img.shields.io/badge/Live_site-anandt9999.github.io%2Fportfolio-5bffa8?style=for-the-badge&labelColor=0b0c0e)](https://anandt9999.github.io/portfolio/)
 

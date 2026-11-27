@@ -113,7 +113,7 @@ function Nav({ theme, toggleTheme, ready }) {
         <Anchor to="top" className="nav__brand" aria-label="Back to top">
           <span className="nav__prompt">&gt;_</span><span>anand</span>
         </Anchor>
-        <div className="nav__status" title="Local time in Hyderabad">
+        <div className="nav__status" title="Local time in Mumbai">
           <span className="pulse" /><Clock /><span className="dim">IST</span>
         </div>
         <nav className="nav__links" aria-label="Primary">
@@ -226,7 +226,7 @@ function FlowDiagram() {
 }
 
 /* ---------------- Resume as an API call: terminal streams the response, then a file card ---------------- */
-const RESUME_BYTES = 570838
+const RESUME_BYTES = 571146
 function resumeUrl() {
   // Real absolute URL of the PDF on whatever host serves the site
   try { return new URL(profile.resume, window.location.href).href } catch { return profile.resume }
@@ -378,8 +378,8 @@ function Hero({ ready }) {
                   </span>
                 </h1>
                 <motion.p className="hero__lede" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, ease, delay: 0.8 }}>
-                  Backend engineer and <span className="pill">Project Lead at Arcitech</span>. Today I build <strong>FastAPI and Node.js services</strong>,
-                  <strong>RAG agents</strong>, and a few <strong>Revit integrations</strong> on the side: the parts of software you don't see that keep working at scale. Four and a half years in Python
+                  Backend engineer and <span className="pill">Project Lead at Arcitech</span>. Today I build <strong>FastAPI and Node.js services</strong>,{' '}
+                  <strong>RAG agents</strong> and <strong>Revit integrations</strong>: the parts of software you don't see that keep working at scale. Four and a half years in Python
                   backends, now growing toward <span className="serif hl">system design &amp; backend architecture.</span>
                 </motion.p>
                 <motion.div className="hero__cta" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, ease, delay: 1 }}>

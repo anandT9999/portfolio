@@ -3,7 +3,7 @@ export const profile = {
   first: 'Anand',
   last: 'Torati',
   role: 'Backend Engineer',
-  location: 'Hyderabad, India',
+  location: 'Mumbai, India',
   current: 'Project Lead · Arcitech',
   email: 'anandtorati@gmail.com',
   github: 'https://github.com/anandT9999',
