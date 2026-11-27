@@ -226,7 +226,7 @@ function FlowDiagram() {
 }
 
 /* ---------------- Resume as an API call: terminal streams the response, then a file card ---------------- */
-const RESUME_BYTES = 571936
+const RESUME_BYTES = 570847
 function resumeUrl() {
   // Real absolute URL of the PDF on whatever host serves the site
   try { return new URL(profile.resume, window.location.href).href } catch { return profile.resume }
