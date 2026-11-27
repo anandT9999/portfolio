@@ -379,7 +379,7 @@ function Hero({ ready }) {
                 </h1>
                 <motion.p className="hero__lede" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, ease, delay: 0.8 }}>
                   Backend engineer and <span className="pill">Project Lead at Arcitech</span>. Today I build <strong>FastAPI and Node.js services</strong>,
-                  the pipelines behind them, and a few <strong>Revit integrations</strong> on the side: the parts of software you don't see that keep working at scale. Four and a half years in Python
+                  pipelines that <strong>vectorise terabytes of files into OpenSearch</strong>, and a few <strong>Revit integrations</strong> on the side: the parts of software you don't see that keep working at scale. Four and a half years in Python
                   backends, now growing toward <span className="serif hl">system design &amp; backend architecture.</span>
                 </motion.p>
                 <motion.div className="hero__cta" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, ease, delay: 1 }}>
@@ -493,7 +493,7 @@ function About() {
                 <>
                   <p>I studied Computer Science with a Data Science focus at Lovely Professional University, and started my career at <strong>iLink Digital</strong> writing REST APIs with FastAPI and Flask for clients like ISOutsource and AECOM. That's where I first wired services to message queues, shipped containers on <strong>Kubernetes</strong>, and learned that tests are the cheapest insurance you can buy.</p>
                   <p>At <strong>Amunik</strong> I widened out: React interfaces, DigitalOcean CI/CD, schema design and SQL tuning. Seeing a whole product end to end changed how I write the backend.</p>
-                  <p>Today at <strong>Arcitech</strong> I lead the engineering team on Aufgang, an AI platform for an architecture firm. My days mix <strong>FastAPI</strong> and <strong>Node.js</strong> services, queue-driven pipelines over a million-file share, LLM agents, a bit of <strong>Revit</strong> plugin work and release management across four environments. The question I keep asking now is less "how do I build this endpoint?" and more <span className="serif hl">"how should this whole system be shaped?"</span></p>
+                  <p>Today at <strong>Arcitech</strong> I lead the engineering team on Aufgang.ai, an AI platform for NYC architecture and building-code firms. My days mix <strong>FastAPI</strong> and <strong>Node.js</strong> services, pipelines that turn a <strong>terabyte-scale file share</strong> into clean, searchable vectors in OpenSearch, AI agents, a bit of <strong>Revit</strong> plugin work and release management across four environments. The question I keep asking now is less "how do I build this endpoint?" and more <span className="serif hl">"how should this whole system be shaped?"</span></p>
                 </>
               )}
               {tab === 1 && (
@@ -582,6 +582,19 @@ function Work() {
           </div>
         </Spotlight>
       </Reveal>
+
+      {/* Everything else on the Aufgang platform, one compact card per module */}
+      <div className="modules">
+        <Reveal as="span" className="label modules__label">Also on Aufgang.ai</Reveal>
+        <motion.div className="modules__grid" variants={stagger(0.05)} initial="hidden" whileInView="show" viewport={{ once: true, margin: '0px 0px -10% 0px' }}>
+          {feature.modules.map(([title, body]) => (
+            <motion.div key={title} className="module card-hover" variants={item} whileHover={{ y: -4 }}>
+              <h4>{title}</h4>
+              <p>{body}</p>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
 
       <div className="project-grid">
         {projects.map((p, i) => (

@@ -50,7 +50,7 @@ This is my personal portfolio. It tells the story of my work as a backend engine
 | **Home** | Introduction, current focus, Resume terminal and the request-flow diagram |
 | **About** | Background as a story, a TL;DR list or a timeline |
 | **Journey** | Six levels of growth, from endpoints to system design |
-| **Work** | Aufgang (AI platform, 1M+ file pipeline), BEAK, a database migration tool and selected repositories |
+| **Work** | Aufgang.ai: TB-scale file vectorisation into OpenSearch with Textract OCR, AI agents, NYC building-code compliance on Revit models, and 400+ FastAPI endpoints. Also BEAK, a database migration tool and selected repositories |
 | **Experience** | Arcitech, Amunik and iLink Digital |
 | **Stack** | Languages, databases, cloud, AI tools, certifications and education |
 | **Contact** | Email, LinkedIn, GitHub and resume download |

@@ -13,14 +13,14 @@ export const profile = {
 
 export const stats = [
   { to: 4.5, dec: 1, suffix: '', sup: 'yrs', label: 'Building Python backends' },
-  { to: 1, dec: 0, suffix: 'M+', label: 'Files indexed for semantic search' },
+  { to: 1, dec: 0, suffix: 'M+', label: 'Files from a TB-scale share vectorised into OpenSearch' },
+  { to: 400, dec: 0, suffix: '+', label: 'FastAPI endpoints on the platform I lead' },
   { to: 4, dec: 0, suffix: '', label: 'Environments I ship releases across' },
-  { to: 85, dec: 0, suffix: '%', label: 'Test coverage, 40% fewer prod issues' },
 ]
 
 export const marquee = [
-  ['FastAPI', true], ['Node.js'], ['Async APIs', true], ['Cloud-native on AWS'], ['Revit integrations', true],
-  ['AI agents'], ['Vector search'], ['System design', true],
+  ['FastAPI', true], ['TB-scale vector search'], ['OCR pipelines', true], ['AI agents'], ['Node.js'],
+  ['Revit integrations', true], ['Cloud-native on AWS'], ['System design', true],
 ]
 
 export const timeline = [
@@ -34,11 +34,11 @@ export const timeline = [
 
 export const tldr = [
   ['Role', 'Project Lead at Arcitech (previously Senior Python Developer)'],
-  ['Now', 'FastAPI & Node.js services, plus Revit / Autodesk ACC integrations'],
-  ['Core', 'Python · FastAPI · Node.js · PostgreSQL / pgvector · MongoDB · Redis'],
-  ['Scale', 'SQS / Celery pipelines, Lambda & ECS workers, OpenSearch'],
-  ['AI', 'LLM agents with LangChain, OpenAI, Claude, Gemini; vector search'],
-  ['Ship', 'AWS CodeBuild / CodeDeploy, Docker, Kubernetes; DEV → QAT → PRE → PROD'],
+  ['Now', 'FastAPI & Node.js services, TB-scale ingestion pipelines, Revit / Autodesk ACC integrations'],
+  ['Core', 'Python · FastAPI · Node.js · PostgreSQL / pgvector · MongoDB · Redis · RabbitMQ'],
+  ['Scale', 'Vectorising a TB-scale, 1M+ file share into OpenSearch: SQS, Celery, Lambda & ECS, Textract OCR'],
+  ['AI', 'Tool-calling agents on Claude, OpenAI and Gemini with RAG, streaming and LangGraph'],
+  ['Ship', 'CodeBuild / CodeDeploy across DEV → QAT → PRE → PROD, with Semgrep, Bandit, Gitleaks and Trivy in CI'],
   ['Also', 'Java, C# (Revit plugin), React'],
   ['Next', 'System design & backend architecture'],
 ]
@@ -60,14 +60,14 @@ export const journey = [
     chips: ['Docker', 'Kubernetes', 'AWS', 'CI/CD'],
   },
   {
-    n: 'L4', title: 'Distributed pipelines', q: 'What happens at a million files?',
-    body: 'Size-routed OCR through SQS to Lambda or ECS, skipping OCR on text-layer PDFs to cut cost, embeddings for semantic search, and a resumable reconciliation job keeping OpenSearch in sync.',
-    chips: ['SQS', 'Lambda / ECS', 'OpenSearch', 'pgvector'],
+    n: 'L4', title: 'Data at terabyte scale', q: 'What happens at a million files and terabytes of data?',
+    body: 'Vectorising a TB-scale, 1M+ file share into OpenSearch. Files are routed by size through SQS to Lambda or ECS, text-layer PDFs keep their native text while scans go through Textract OCR, and a resumable reconciliation job keeps the index in sync with the live filesystem.',
+    chips: ['OpenSearch', 'SQS', 'Lambda / ECS', 'Textract', 'pgvector'],
   },
   {
     n: 'L5', title: 'Ownership', q: 'How does a team ship it safely?',
-    body: 'Leading the team: sprint planning, code reviews, backend design decisions and releases across DEV, QAT, PRE and PROD.',
-    chips: ['Tech lead', 'Code review', 'Release mgmt'],
+    body: 'Leading the team: sprint planning, code reviews, backend design decisions, security scanning in CI, and releases across DEV, QAT, PRE and PROD.',
+    chips: ['Tech lead', 'Code review', 'DevSecOps', 'Release mgmt'],
   },
   {
     n: 'L6', title: 'System design & architecture', q: 'What should the system look like before anyone writes code?',
@@ -77,23 +77,35 @@ export const journey = [
 ]
 
 export const feature = {
-  label: '01 · AI platform · Arcitech', when: '2025 → now', title: 'Aufgang',
-  lede: 'An AI-enabled platform for an architecture firm: projects, chatbot, building-code compliance, Revit / ACC integration and file search.',
+  label: '01 · AI platform · Arcitech', when: '2025 → now', title: 'Aufgang.ai',
+  lede: 'An AI platform for NYC architecture and building-code firms: AI agents, building-code compliance on Revit models, zoning and DOB research, and search across every project file.',
   bullets: [
-    'Async FastAPI services on PostgreSQL (asyncpg) and MongoDB (Motor / Beanie) for projects, profiles and file sync.',
-    'Metadata scanning and vectorisation over a 1M+ file network share, with size-routed OCR via SQS to Lambda or ECS.',
-    'Agent-based chatbot and building-code compliance checks with OpenAI, Claude and Gemini.',
-    'Autodesk Construction Cloud (OAuth) sync and submit-and-poll endpoints for a C# Revit plugin; Microsoft Graph mail search.',
-    'Deployed on AWS with CodeBuild / CodeDeploy across four environments.',
+    'Vectorised a TB-scale, 1M+ file network share into OpenSearch, so every project file is searchable by meaning, not just by name.',
+    'Large data handled efficiently: files are routed by size through SQS to Lambda or ECS workers, and a resumable reconciliation job keeps the index in sync without re-processing everything.',
+    'OCR quality first: text-layer PDFs keep their native text, scanned pages go through AWS Textract, so embeddings are built from the most accurate text available.',
+    'Part of a platform with 400+ FastAPI endpoints across 41 modules on MongoDB, PostgreSQL / pgvector, OpenSearch, Redis and RabbitMQ.',
+    'Migrated the Node.js / Express backend to FastAPI while keeping the API wire-compatible.',
   ],
-  chips: ['FastAPI', 'Node.js', 'PostgreSQL', 'MongoDB', 'SQS', 'Lambda', 'OpenSearch', 'Revit / ACC', 'LLMs'],
+  chips: ['FastAPI', 'OpenSearch', 'Textract', 'SQS', 'Lambda / ECS', 'Celery', 'pgvector', 'Node.js', 'Revit / ACC'],
   pipeline: [
-    ['scan', 'file share · 1M+ files'],
+    ['scan', 'TB-scale share · 1M+ files'],
     ['route', 'by size → SQS'],
-    ['ocr', 'Lambda / ECS · skipped for text-layer PDFs'],
+    ['extract', 'native text layer when present'],
+    ['ocr', 'Textract on Lambda / ECS for scans'],
     ['chunk + embed', 'semantic vectors'],
     ['index', 'OpenSearch'],
     ['reconcile ↺', 'resumable · keeps index = filesystem', true],
+  ],
+  modules: [
+    ['AI assistant "Elise"', 'Tool-calling agent across several LLM providers with fallback, streaming over WebSocket / SSE, RAG over emails and project files, RFI extraction from PDFs, chat memory and LLM cost tracking.'],
+    ['Building-code compliance', 'Automated NYC Building Code checks on Revit model data (fire protection, egress, ADA, habitability) run as Celery jobs that produce PDF reports.'],
+    ['Zoning agent', 'Claude agent over the 1.3M-token NYC Zoning Resolution with question routing, checks that every cited section was read, and MapPLUTO lot data.'],
+    ['DOB agent', 'AI agent for NYC Department of Buildings filings and objections, with objection comments extracted from PDFs.'],
+    ['Maps & lot data', 'NYC tax-lot lookup with GeoSearch and MapPLUTO, adjacency analysis and a Cesium 3D lot viewer.'],
+    ['Revit / Autodesk', 'Revit plugin APIs, Autodesk Construction Cloud integration, drawing logs and project image search.'],
+    ['Documents & file sync', 'Microsoft Graph sync of OneDrive and Outlook, previews for PDF, Word, PowerPoint and Excel, and the document search index.'],
+    ['Auth & security', 'JWT with refresh tokens, email OTP, Microsoft SSO, WebAuthn passkeys, role-based access, rate limiting, AWS Secrets Manager and Vault.'],
+    ['DevSecOps', 'CI/CD for DEV, QAT, PRE and PROD on CodeBuild / CodeDeploy, with Semgrep, Bandit, Gitleaks, Trivy and OSV scans in the pipeline.'],
   ],
 }
 
@@ -134,17 +146,18 @@ export const jobs = [
         title: 'Project Lead, Aufgang', when: 'Apr 2026 – Present',
         bullets: [
           'Lead the engineering team through sprint planning, task allocation, code reviews and stakeholder coordination.',
-          'Drive backend design and delivery across FastAPI services, AI and Revit integrations, and AWS releases.',
-          'Coordinate releases across DEV, QAT, PRE and PROD.',
+          'Drive backend design and delivery across FastAPI services, AI agents, Revit integrations and AWS releases.',
+          'Coordinate releases across DEV, QAT, PRE and PROD, with Semgrep, Bandit, Gitleaks and Trivy scans in CI.',
         ],
       },
       {
         title: 'Senior Python Developer', when: 'Jun 2025 – Apr 2026',
         bullets: [
-          'Designed and built async FastAPI services on PostgreSQL and MongoDB for projects, user profiles and file sync.',
-          'Built Celery and SQS pipelines for OCR, chunking, embeddings and OpenSearch indexing over a 1M+ file share.',
-          'Developed the agent-based chatbot and building-code compliance checks with OpenAI, Claude and Gemini.',
-          'Integrated Autodesk Construction Cloud, a C# Revit plugin and Microsoft Graph.',
+          'Vectorised a TB-scale, 1M+ file share into OpenSearch with Celery and SQS pipelines for OCR, chunking and embeddings.',
+          'Kept large-data processing efficient and accurate: size-routed Lambda / ECS workers, native text for text-layer PDFs, Textract OCR for scans, and resumable reconciliation.',
+          'Built AI agents (chat assistant, zoning, DOB) on Claude, OpenAI and Gemini with tool calling, RAG and real-time streaming.',
+          'Automated NYC Building Code and ADA compliance checks on Revit model data, producing PDF reports from Celery jobs.',
+          'Migrated the Node.js backend to FastAPI without breaking the API; integrated Autodesk ACC, a C# Revit plugin and Microsoft Graph.',
         ],
       },
     ],
@@ -170,12 +183,12 @@ export const jobs = [
 ]
 
 export const stack = [
-  ['Languages & frameworks', ['Python', 'FastAPI', 'Node.js', 'Flask', 'Django', 'C# (Revit)', 'Java', 'React.js', 'PySpark']],
-  ['Databases', ['PostgreSQL', 'pgvector', 'MySQL', 'MongoDB', 'Redis', 'Cassandra', 'SQLite']],
-  ['Data & messaging', ['Celery', 'SQS', 'Databricks', 'Protobuf', 'Avro', 'Kafka']],
-  ['Cloud & DevOps', ['AWS EC2', 'S3', 'RDS', 'Lambda', 'ECS', 'Textract', 'CodePipeline', 'CodeDeploy', 'Docker', 'Kubernetes']],
-  ['AI & search', ['AI agents', 'LangChain', 'OpenAI', 'Claude', 'Gemini / Vertex AI', 'OpenSearch', 'Vector search']],
-  ['Integrations & tools', ['Revit plugin (C#)', 'Autodesk ACC', 'Microsoft Graph', 'Postman', 'Power BI', 'GitHub']],
+  ['Languages & frameworks', ['Python', 'FastAPI', 'Node.js', 'TypeScript', 'React', 'Flask', 'Django', 'C# (Revit)', 'Java']],
+  ['Data & search', ['PostgreSQL', 'pgvector', 'MongoDB', 'OpenSearch', 'Redis', 'MySQL', 'Cassandra']],
+  ['Pipelines & messaging', ['Celery', 'SQS', 'RabbitMQ', 'Textract OCR', 'Databricks', 'Kafka']],
+  ['Cloud & DevSecOps', ['AWS Lambda', 'ECS', 'S3', 'EC2', 'Secrets Manager', 'CodeBuild', 'CodeDeploy', 'Docker', 'Kubernetes', 'Semgrep', 'Trivy']],
+  ['AI', ['AI agents', 'Tool calling', 'RAG', 'LangGraph', 'LangChain', 'Claude', 'OpenAI', 'Gemini / Vertex AI']],
+  ['Integrations', ['Revit plugin (C#)', 'Autodesk ACC', 'Microsoft Graph', 'NYC open data', 'WebAuthn / SSO', 'Postman']],
 ]
 
 export const certs = [

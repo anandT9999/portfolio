@@ -345,6 +345,19 @@ p { margin: 0; }
 .pipe li span { color: var(--muted); font-size: 12px; }
 .pipe li.loop::before { background: var(--accent); }
 
+.modules { margin: 10px 0 18px; }
+.modules__label { display: block; margin: 26px 0 14px; }
+.modules__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.module {
+  padding: 20px; border-radius: 16px; background: var(--surface); border: 1px solid var(--line);
+  transition: border-color .3s; min-width: 0;
+}
+.module:hover { border-color: var(--accent); }
+.module h4 { font-size: 17px; letter-spacing: -.01em; margin-bottom: 8px; }
+.module p { color: var(--muted); font-size: 14.5px; line-height: 1.55; }
+@media (max-width: 1020px) { .modules__grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 760px) { .modules__grid { grid-template-columns: 1fr; } }
+
 .oss { margin-top: 70px; }
 .oss__head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 14px; gap: 10px; flex-wrap: wrap; }
 .oss__list a {
