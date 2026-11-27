@@ -38,7 +38,7 @@ export const tldr = [
   ['Core', 'Python · FastAPI · Node.js · PostgreSQL / pgvector · MongoDB · Redis · RabbitMQ'],
   ['Scale', 'Vectorising a TB-scale, 1M+ file share into OpenSearch: SQS, Celery, Lambda & ECS, Textract OCR'],
   ['AI', 'Tool-calling agents on Claude, OpenAI and Gemini with RAG, streaming and LangGraph'],
-  ['Ship', 'CodeBuild / CodeDeploy across DEV → QAT → PRE → PROD, with Semgrep, Bandit, Gitleaks and Trivy in CI'],
+  ['Ship', 'AWS CodeBuild / CodeDeploy, Docker, Kubernetes; DEV → QAT → PRE → PROD'],
   ['Also', 'Java, C# (Revit plugin), React'],
   ['Next', 'System design & backend architecture'],
 ]
@@ -66,8 +66,8 @@ export const journey = [
   },
   {
     n: 'L5', title: 'Ownership', q: 'How does a team ship it safely?',
-    body: 'Leading the team: sprint planning, code reviews, backend design decisions, security scanning in CI, and releases across DEV, QAT, PRE and PROD.',
-    chips: ['Tech lead', 'Code review', 'DevSecOps', 'Release mgmt'],
+    body: 'Leading the team: sprint planning, code reviews, backend design decisions and releases across DEV, QAT, PRE and PROD.',
+    chips: ['Tech lead', 'Code review', 'Release mgmt'],
   },
   {
     n: 'L6', title: 'System design & architecture', q: 'What should the system look like before anyone writes code?',
@@ -78,7 +78,7 @@ export const journey = [
 
 export const feature = {
   label: '01 · AI platform · Arcitech', when: '2025 → now', title: 'Aufgang.ai',
-  lede: 'An AI platform for NYC architecture and building-code firms: AI agents, building-code compliance on Revit models, zoning and DOB research, and search across every project file.',
+  lede: 'An AI platform for NYC architecture firms: AI agents, DOB research, Revit / Autodesk integration, and search across every project file.',
   bullets: [
     'Vectorised a TB-scale, 1M+ file network share into OpenSearch, so every project file is searchable by meaning, not just by name.',
     'Large data handled efficiently: files are routed by size through SQS to Lambda or ECS workers, and a resumable reconciliation job keeps the index in sync without re-processing everything.',
@@ -98,14 +98,11 @@ export const feature = {
   ],
   modules: [
     ['AI assistant "Elise"', 'Tool-calling agent across several LLM providers with fallback, streaming over WebSocket / SSE, RAG over emails and project files, RFI extraction from PDFs, chat memory and LLM cost tracking.'],
-    ['Building-code compliance', 'Automated NYC Building Code checks on Revit model data (fire protection, egress, ADA, habitability) run as Celery jobs that produce PDF reports.'],
-    ['Zoning agent', 'Claude agent over the 1.3M-token NYC Zoning Resolution with question routing, checks that every cited section was read, and MapPLUTO lot data.'],
     ['DOB agent', 'AI agent for NYC Department of Buildings filings and objections, with objection comments extracted from PDFs.'],
     ['Maps & lot data', 'NYC tax-lot lookup with GeoSearch and MapPLUTO, adjacency analysis and a Cesium 3D lot viewer.'],
     ['Revit / Autodesk', 'Revit plugin APIs, Autodesk Construction Cloud integration, drawing logs and project image search.'],
     ['Documents & file sync', 'Microsoft Graph sync of OneDrive and Outlook, previews for PDF, Word, PowerPoint and Excel, and the document search index.'],
     ['Auth & security', 'JWT with refresh tokens, email OTP, Microsoft SSO, WebAuthn passkeys, role-based access, rate limiting, AWS Secrets Manager and Vault.'],
-    ['DevSecOps', 'CI/CD for DEV, QAT, PRE and PROD on CodeBuild / CodeDeploy, with Semgrep, Bandit, Gitleaks, Trivy and OSV scans in the pipeline.'],
   ],
 }
 
@@ -147,7 +144,7 @@ export const jobs = [
         bullets: [
           'Lead the engineering team through sprint planning, task allocation, code reviews and stakeholder coordination.',
           'Drive backend design and delivery across FastAPI services, AI agents, Revit integrations and AWS releases.',
-          'Coordinate releases across DEV, QAT, PRE and PROD, with Semgrep, Bandit, Gitleaks and Trivy scans in CI.',
+          'Coordinate releases across DEV, QAT, PRE and PROD.',
         ],
       },
       {
@@ -155,8 +152,7 @@ export const jobs = [
         bullets: [
           'Vectorised a TB-scale, 1M+ file share into OpenSearch with Celery and SQS pipelines for OCR, chunking and embeddings.',
           'Kept large-data processing efficient and accurate: size-routed Lambda / ECS workers, native text for text-layer PDFs, Textract OCR for scans, and resumable reconciliation.',
-          'Built AI agents (chat assistant, zoning, DOB) on Claude, OpenAI and Gemini with tool calling, RAG and real-time streaming.',
-          'Automated NYC Building Code and ADA compliance checks on Revit model data, producing PDF reports from Celery jobs.',
+          'Built AI agents (chat assistant, DOB) on Claude, OpenAI and Gemini with tool calling, RAG and real-time streaming.',
           'Migrated the Node.js backend to FastAPI without breaking the API; integrated Autodesk ACC, a C# Revit plugin and Microsoft Graph.',
         ],
       },
@@ -186,7 +182,7 @@ export const stack = [
   ['Languages & frameworks', ['Python', 'FastAPI', 'Node.js', 'TypeScript', 'React', 'Flask', 'Django', 'C# (Revit)', 'Java']],
   ['Data & search', ['PostgreSQL', 'pgvector', 'MongoDB', 'OpenSearch', 'Redis', 'MySQL', 'Cassandra']],
   ['Pipelines & messaging', ['Celery', 'SQS', 'RabbitMQ', 'Textract OCR', 'Databricks', 'Kafka']],
-  ['Cloud & DevSecOps', ['AWS Lambda', 'ECS', 'S3', 'EC2', 'Secrets Manager', 'CodeBuild', 'CodeDeploy', 'Docker', 'Kubernetes', 'Semgrep', 'Trivy']],
+  ['Cloud & DevOps', ['AWS Lambda', 'ECS', 'S3', 'EC2', 'Secrets Manager', 'CodeBuild', 'CodeDeploy', 'Docker', 'Kubernetes']],
   ['AI', ['AI agents', 'Tool calling', 'RAG', 'LangGraph', 'LangChain', 'Claude', 'OpenAI', 'Gemini / Vertex AI']],
   ['Integrations', ['Revit plugin (C#)', 'Autodesk ACC', 'Microsoft Graph', 'NYC open data', 'WebAuthn / SSO', 'Postman']],
 ]
