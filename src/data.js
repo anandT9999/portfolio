@@ -19,8 +19,8 @@ export const stats = [
 ]
 
 export const marquee = [
-  ['Async APIs', true], ['Event-driven pipelines'], ['Cloud-native on AWS'], ['Vector search', true],
-  ['AI agents'], ['CI/CD'], ['System design', true],
+  ['FastAPI', true], ['Node.js'], ['Async APIs', true], ['Cloud-native on AWS'], ['Revit integrations', true],
+  ['AI agents'], ['Vector search'], ['System design', true],
 ]
 
 export const timeline = [
@@ -34,8 +34,9 @@ export const timeline = [
 
 export const tldr = [
   ['Role', 'Project Lead at Arcitech (previously Senior Python Developer)'],
-  ['Core', 'Python · FastAPI · PostgreSQL / pgvector · MongoDB · Redis'],
-  ['Scale', 'SQS / Kafka / Celery pipelines, Lambda & ECS workers, OpenSearch'],
+  ['Now', 'FastAPI & Node.js services, plus Revit / Autodesk ACC integrations'],
+  ['Core', 'Python · FastAPI · Node.js · PostgreSQL / pgvector · MongoDB · Redis'],
+  ['Scale', 'SQS / Celery pipelines, Lambda & ECS workers, OpenSearch'],
   ['AI', 'LLM agents with LangChain, OpenAI, Claude, Gemini; vector search'],
   ['Ship', 'AWS CodeBuild / CodeDeploy, Docker, Kubernetes; DEV → QAT → PRE → PROD'],
   ['Also', 'Java, C# (Revit plugin), React'],
@@ -50,8 +51,8 @@ export const journey = [
   },
   {
     n: 'L2', title: 'Data in motion', q: 'How do services talk without blocking each other?',
-    body: 'Kafka streaming for real-time exchange, Celery for scheduled async work, Databricks ETL tuning, schema and query optimisation.',
-    chips: ['Kafka', 'Celery', 'Databricks', 'SQL tuning'],
+    body: 'Celery for scheduled async work, message queues for real-time exchange, Databricks ETL tuning, schema and query optimisation.',
+    chips: ['Celery', 'Queues', 'Databricks', 'SQL tuning'],
   },
   {
     n: 'L3', title: 'Cloud-native delivery', q: 'How does it run, deploy and roll back?',
@@ -85,7 +86,7 @@ export const feature = {
     'Autodesk Construction Cloud (OAuth) sync and submit-and-poll endpoints for a C# Revit plugin; Microsoft Graph mail search.',
     'Deployed on AWS with CodeBuild / CodeDeploy across four environments.',
   ],
-  chips: ['FastAPI', 'PostgreSQL', 'MongoDB', 'SQS', 'Lambda', 'ECS', 'OpenSearch', 'LLMs'],
+  chips: ['FastAPI', 'Node.js', 'PostgreSQL', 'MongoDB', 'SQS', 'Lambda', 'OpenSearch', 'Revit / ACC', 'LLMs'],
   pipeline: [
     ['scan', 'file share · 1M+ files'],
     ['route', 'by size → SQS'],
@@ -105,7 +106,7 @@ export const projects = [
       'Pydantic validation and secure CRUD to improve data integrity.',
       'Automated data collection with BeautifulSoup scraping.',
     ],
-    chips: ['FastAPI', 'Kafka', 'PostgreSQL', 'Pydantic'],
+    chips: ['FastAPI', 'PostgreSQL', 'Pydantic', 'Streaming'],
   },
   {
     label: '03 · Data tooling · AECOM', when: '2022 – 2023', title: 'Database Migration Tool',
@@ -169,12 +170,12 @@ export const jobs = [
 ]
 
 export const stack = [
-  ['Languages & frameworks', ['Python', 'FastAPI', 'Flask', 'Django', 'PySpark', 'Java', 'C#', 'React.js']],
+  ['Languages & frameworks', ['Python', 'FastAPI', 'Node.js', 'Flask', 'Django', 'C# (Revit)', 'Java', 'React.js', 'PySpark']],
   ['Databases', ['PostgreSQL', 'pgvector', 'MySQL', 'MongoDB', 'Redis', 'Cassandra', 'SQLite']],
-  ['Data & messaging', ['Kafka', 'KSQL', 'Kafka Connect', 'Celery', 'SQS', 'Databricks', 'Avro', 'Protobuf']],
+  ['Data & messaging', ['Celery', 'SQS', 'Databricks', 'Protobuf', 'Avro', 'Kafka']],
   ['Cloud & DevOps', ['AWS EC2', 'S3', 'RDS', 'Lambda', 'ECS', 'Textract', 'CodePipeline', 'CodeDeploy', 'Docker', 'Kubernetes']],
   ['AI & search', ['AI agents', 'LangChain', 'OpenAI', 'Claude', 'Gemini / Vertex AI', 'OpenSearch', 'Vector search']],
-  ['Integrations & tools', ['Autodesk ACC / Revit', 'Microsoft Graph', 'Postman', 'Power BI', 'Tableau', 'GitHub']],
+  ['Integrations & tools', ['Revit plugin (C#)', 'Autodesk ACC', 'Microsoft Graph', 'Postman', 'Power BI', 'GitHub']],
 ]
 
 export const certs = [

@@ -172,8 +172,8 @@ function FlowDiagram() {
     return () => clearInterval(id)
   }, [reduce])
   const nodes = [
-    [20, 105, 100, 50, 'client', 'HTTPS'], [240, 100, 120, 60, 'FastAPI', 'async · pydantic', true],
-    [470, 105, 120, 50, 'queue', 'SQS · Kafka'], [700, 35, 120, 50, 'workers', 'Celery · Lambda'],
+    [20, 105, 100, 50, 'client', 'HTTPS'], [240, 100, 120, 60, 'FastAPI', 'async · node.js', true],
+    [470, 105, 120, 50, 'queue', 'SQS · Celery'], [700, 35, 120, 50, 'workers', 'Lambda · ECS'],
     [700, 175, 120, 50, 'embed', 'chunk · vector'],
   ]
   const wires = ['M120 130 H240', 'M360 130 H470', 'M590 130 C640 130 640 60 700 60', 'M590 130 C640 130 640 200 700 200',
@@ -378,8 +378,8 @@ function Hero({ ready }) {
                   </span>
                 </h1>
                 <motion.p className="hero__lede" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, ease, delay: 0.8 }}>
-                  Backend engineer and <span className="pill">Project Lead at Arcitech</span>. I build the parts of software you don't see:
-                  {' '}<strong>APIs, queues, pipelines and data stores</strong> that keep working at scale. Four and a half years in Python
+                  Backend engineer and <span className="pill">Project Lead at Arcitech</span>. Today I build <strong>FastAPI and Node.js services</strong>,
+                  the pipelines behind them, and a few <strong>Revit integrations</strong> on the side: the parts of software you don't see that keep working at scale. Four and a half years in Python
                   backends, now growing toward <span className="serif hl">system design &amp; backend architecture.</span>
                 </motion.p>
                 <motion.div className="hero__cta" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, ease, delay: 1 }}>
@@ -491,9 +491,9 @@ function About() {
               exit={{ opacity: 0, y: -8 }} transition={{ duration: 0.35, ease }}>
               {tab === 0 && (
                 <>
-                  <p>I studied Computer Science with a Data Science focus at Lovely Professional University, and started my career at <strong>iLink Digital</strong> writing REST APIs with FastAPI and Flask for clients like ISOutsource and AECOM. That's where I first wired services to <strong>Kafka</strong>, shipped containers on <strong>Kubernetes</strong>, and learned that tests are the cheapest insurance you can buy.</p>
+                  <p>I studied Computer Science with a Data Science focus at Lovely Professional University, and started my career at <strong>iLink Digital</strong> writing REST APIs with FastAPI and Flask for clients like ISOutsource and AECOM. That's where I first wired services to message queues, shipped containers on <strong>Kubernetes</strong>, and learned that tests are the cheapest insurance you can buy.</p>
                   <p>At <strong>Amunik</strong> I widened out: React interfaces, DigitalOcean CI/CD, schema design and SQL tuning. Seeing a whole product end to end changed how I write the backend.</p>
-                  <p>Today at <strong>Arcitech</strong> I lead the engineering team on Aufgang, an AI platform for an architecture firm. My days mix async FastAPI services, queue-driven pipelines over a million-file share, LLM agents and release management across four environments. The question I keep asking now is less "how do I build this endpoint?" and more <span className="serif hl">"how should this whole system be shaped?"</span></p>
+                  <p>Today at <strong>Arcitech</strong> I lead the engineering team on Aufgang, an AI platform for an architecture firm. My days mix <strong>FastAPI</strong> and <strong>Node.js</strong> services, queue-driven pipelines over a million-file share, LLM agents, a bit of <strong>Revit</strong> plugin work and release management across four environments. The question I keep asking now is less "how do I build this endpoint?" and more <span className="serif hl">"how should this whole system be shaped?"</span></p>
                 </>
               )}
               {tab === 1 && (
