@@ -353,10 +353,11 @@ p { margin: 0; }
   transition: border-color .3s; min-width: 0;
 }
 .module:hover { border-color: var(--accent); }
+.module:first-child { grid-column: span 2; }
 .module h4 { font-size: 17px; letter-spacing: -.01em; margin-bottom: 8px; }
 .module p { color: var(--muted); font-size: 14.5px; line-height: 1.55; }
 @media (max-width: 1020px) { .modules__grid { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 760px) { .modules__grid { grid-template-columns: 1fr; } }
+@media (max-width: 760px) { .modules__grid { grid-template-columns: 1fr; } .module:first-child { grid-column: auto; } }
 
 .oss { margin-top: 70px; }
 .oss__head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 14px; gap: 10px; flex-wrap: wrap; }

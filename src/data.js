@@ -78,7 +78,7 @@ export const journey = [
 
 export const feature = {
   label: '01 · AI platform · Arcitech', when: '2025 → now', title: 'Aufgang.ai',
-  lede: 'An AI platform for NYC architecture firms: AI agents, DOB research, Revit / Autodesk integration, and search across every project file.',
+  lede: 'An AI platform for NYC architecture firms: an AI assistant, Revit / Autodesk integration, NYC lot data, and search across every project file.',
   bullets: [
     'Vectorised a TB-scale, 1M+ file network share into OpenSearch, so every project file is searchable by meaning, not just by name.',
     'Large data handled efficiently: files are routed by size through SQS to Lambda or ECS workers, and a resumable reconciliation job keeps the index in sync without re-processing everything.',
@@ -98,12 +98,11 @@ export const feature = {
     ['reconcile ↺', 'resumable · keeps index = filesystem', true],
   ],
   modules: [
-    ['AI assistant "Elise"', 'Tool-calling agent across several LLM providers with fallback, streaming over WebSocket / SSE, RAG over emails and project files, RFI extraction from PDFs, chat memory and LLM cost tracking.'],
-    ['DOB agent', 'AI agent for NYC Department of Buildings filings and objections, with objection comments extracted from PDFs.'],
+    ['AI assistant "Elise"', 'Tool-calling agent across several LLM providers with fallback, streaming over WebSocket / SSE, RAG over project files, RFI extraction from PDFs, chat memory and LLM cost tracking.'],
     ['Maps & lot data', 'NYC tax-lot lookup with GeoSearch and MapPLUTO, adjacency analysis and a Cesium 3D lot viewer.'],
     ['Revit / Autodesk', 'Revit plugin APIs, Autodesk Construction Cloud integration, drawing logs and project image search.'],
-    ['Documents & file sync', 'Microsoft Graph sync of OneDrive and Outlook, previews for PDF, Word, PowerPoint and Excel, and the document search index.'],
-    ['Auth & security', 'JWT with refresh tokens, email OTP, Microsoft SSO, WebAuthn passkeys, role-based access, rate limiting, AWS Secrets Manager and Vault.'],
+    ['Documents & file sync', 'Microsoft Graph sync of OneDrive files, previews for PDF, Word, PowerPoint and Excel, and the document search index.'],
+    ['Auth & security', 'JWT with refresh tokens, one-time codes, Microsoft SSO, WebAuthn passkeys, role-based access, rate limiting, AWS Secrets Manager and Vault.'],
   ],
 }
 
@@ -153,7 +152,7 @@ export const jobs = [
         bullets: [
           'Vectorised a TB-scale, 1M+ file share into OpenSearch with Celery and SQS pipelines for OCR, chunking and embeddings.',
           'Kept large-data processing efficient and accurate: size-routed Lambda / ECS workers, native text for text-layer PDFs, Textract OCR for scans with quality checks and confidence filtering, and resumable reconciliation.',
-          'Built AI agents (chat assistant, DOB) on Claude, OpenAI and Gemini with tool calling, RAG and real-time streaming.',
+          'Built an AI chat assistant on Claude, OpenAI and Gemini with tool calling, RAG and real-time streaming.',
           'Migrated the Node.js backend to FastAPI without breaking the API; integrated Autodesk ACC, a C# Revit plugin and Microsoft Graph.',
         ],
       },
