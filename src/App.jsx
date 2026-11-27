@@ -42,32 +42,6 @@ function useTheme() {
   return [theme, () => setTheme((t) => (t === 'light' ? 'dark' : 'light'))]
 }
 
-/* ---------------- Boot loader ---------------- */
-const BOOT = [
-  '$ ./anand --boot',
-  '[ ok ] loading services ........ fastapi, celery',
-  '[ ok ] connecting stores ........ postgres, mongo, redis',
-  '[ ok ] attaching queues ......... sqs, kafka',
-  '[ ok ] health check ............. 200 OK',
-]
-function Loader({ onDone }) {
-  // Keep the latest callback in a ref so parent re-renders don't restart the timer
-  const done = useRef(onDone)
-  done.current = onDone
-  useEffect(() => { const t = setTimeout(() => done.current(), 1500); return () => clearTimeout(t) }, [])
-  return (
-    <motion.div className="boot" aria-hidden="true"
-      exit={{ clipPath: 'inset(0 0 100% 0)' }} transition={{ duration: 0.9, ease }}
-      style={{ clipPath: 'inset(0 0 0% 0)' }}>
-      <motion.pre className="boot__log" variants={stagger(0.18)} initial="hidden" animate="show">
-        {BOOT.map((l, i) => <motion.span key={i} variants={item} className={i === 4 ? 'ok' : ''}>{l}</motion.span>)}
-      </motion.pre>
-      <div className="boot__bar">
-        <motion.i initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: 1.2, ease }} />
-      </div>
-    </motion.div>
-  )
-}
 
 /* ---------------- Cursor + progress ---------------- */
 function Cursor() {
@@ -736,11 +710,8 @@ function Contact() {
 export default function App() {
   const [theme, toggleTheme] = useTheme()
   const reduce = useReducedMotion()
-  // Show the boot loader once per browser session
-  const [booting, setBooting] = useState(() => {
-    try { return !reduce && !sessionStorage.getItem('at-booted') } catch { return !reduce }
-  })
-  const ready = !booting
+  // No intro screen: the home page renders straight away
+  const ready = true
 
   useEffect(() => {
     if (reduce) return
@@ -751,19 +722,8 @@ export default function App() {
     return () => { cancelAnimationFrame(raf); lenis.destroy(); lenis = null }
   }, [reduce])
 
-  useEffect(() => {
-    if (booting) { lenis?.stop(); document.documentElement.style.overflow = 'hidden' }
-    else { lenis?.start(); document.documentElement.style.overflow = '' }
-  }, [booting])
-
-  const finishBoot = () => {
-    try { sessionStorage.setItem('at-booted', '1') } catch { /* ignore */ }
-    setBooting(false)
-  }
-
   return (
     <MotionConfig reducedMotion="user">
-      <AnimatePresence>{booting && <Loader key="boot" onDone={finishBoot} />}</AnimatePresence>
       <Progress />
       <Cursor />
       <Nav theme={theme} toggleTheme={toggleTheme} ready={ready} />
