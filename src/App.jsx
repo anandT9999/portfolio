@@ -379,7 +379,7 @@ function Hero({ ready }) {
                 </h1>
                 <motion.p className="hero__lede" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, ease, delay: 0.8 }}>
                   Backend engineer and <span className="pill">Project Lead at Arcitech</span>. Today I build <strong>FastAPI and Node.js services</strong>,
-                  pipelines that <strong>vectorise terabytes of files into OpenSearch</strong>, and a few <strong>Revit integrations</strong> on the side: the parts of software you don't see that keep working at scale. Four and a half years in Python
+                  <strong>RAG agents</strong>, and a few <strong>Revit integrations</strong> on the side: the parts of software you don't see that keep working at scale. Four and a half years in Python
                   backends, now growing toward <span className="serif hl">system design &amp; backend architecture.</span>
                 </motion.p>
                 <motion.div className="hero__cta" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, ease, delay: 1 }}>

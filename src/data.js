@@ -19,7 +19,7 @@ export const stats = [
 ]
 
 export const marquee = [
-  ['FastAPI', true], ['TB-scale vector search'], ['OCR pipelines', true], ['AI agents'], ['Node.js'],
+  ['FastAPI', true], ['RAG agents'], ['OCR pipelines', true], ['Vector search'], ['Node.js'],
   ['Revit integrations', true], ['Cloud-native on AWS'], ['System design', true],
 ]
 
