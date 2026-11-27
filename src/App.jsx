@@ -226,7 +226,7 @@ function FlowDiagram() {
 }
 
 /* ---------------- Resume as an API call: terminal streams the response, then a file card ---------------- */
-const RESUME_BYTES = 570436
+const RESUME_BYTES = 570838
 function resumeUrl() {
   // Real absolute URL of the PDF on whatever host serves the site
   try { return new URL(profile.resume, window.location.href).href } catch { return profile.resume }
@@ -493,7 +493,7 @@ function About() {
                 <>
                   <p>I studied Computer Science with a Data Science focus at Lovely Professional University, and started my career at <strong>iLink Digital</strong> writing REST APIs with FastAPI and Flask for clients like ISOutsource and AECOM. That's where I first wired services to message queues, shipped containers on <strong>Kubernetes</strong>, and learned that tests are the cheapest insurance you can buy.</p>
                   <p>At <strong>Amunik</strong> I widened out: React interfaces, DigitalOcean CI/CD, schema design and SQL tuning. Seeing a whole product end to end changed how I write the backend.</p>
-                  <p>Today at <strong>Arcitech</strong> I lead the engineering team on Aufgang.ai, an AI platform for NYC architecture firms. My days mix <strong>FastAPI</strong> and <strong>Node.js</strong> services, pipelines that turn a <strong>terabyte-scale file share</strong> into clean, searchable vectors in OpenSearch, AI agents, a bit of <strong>Revit</strong> plugin work and release management across four environments. The question I keep asking now is less "how do I build this endpoint?" and more <span className="serif hl">"how should this whole system be shaped?"</span></p>
+                  <p>Today at <strong>Arcitech</strong> I lead the engineering team on Aufgang.ai, an AI platform for NYC architecture firms. My days mix <strong>FastAPI</strong> and <strong>Node.js</strong> services, pipelines that turn a <strong>terabyte-scale file share</strong> into clean, searchable vectors in OpenSearch, AI agents, a bit of <strong>Revit</strong> plugin work, and reviewing and pushing the team’s code through four environments. The question I keep asking now is less "how do I build this endpoint?" and more <span className="serif hl">"how should this whole system be shaped?"</span></p>
                 </>
               )}
               {tab === 1 && (

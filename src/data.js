@@ -15,7 +15,7 @@ export const stats = [
   { to: 4.5, dec: 1, suffix: '', sup: 'yrs', label: 'Building Python backends' },
   { to: 1, dec: 0, suffix: 'M+', label: 'Files from a TB-scale share vectorised into OpenSearch' },
   { to: 400, dec: 0, suffix: '+', label: 'FastAPI endpoints on the platform I lead' },
-  { to: 4, dec: 0, suffix: '', label: 'Environments I coordinate releases across' },
+  { to: 4, dec: 0, suffix: '', label: 'Environments I review and push code through' },
 ]
 
 export const marquee = [
@@ -38,7 +38,7 @@ export const tldr = [
   ['Core', 'Python · FastAPI · Node.js · PostgreSQL / pgvector · MongoDB · Redis · RabbitMQ'],
   ['Scale', 'Vectorising a TB-scale, 1M+ file share into OpenSearch: SQS, Celery, Lambda & ECS, Textract OCR with confidence filtering'],
   ['AI', 'Tool-calling agents on Claude, OpenAI and Gemini with RAG, streaming and LangGraph'],
-  ['Lead', 'Sprint planning, code reviews and release coordination across DEV → QAT → PRE → PROD'],
+  ['Lead', 'Sprint planning, code reviews, and pushing reviewed code through DEV → QAT → PRE → PROD'],
   ['Also', 'Java, C# (Revit plugin), React'],
   ['Next', 'System design & backend architecture'],
 ]
@@ -66,8 +66,8 @@ export const journey = [
   },
   {
     n: 'L5', title: 'Ownership', q: 'How does a team ship it safely?',
-    body: 'Leading the team: sprint planning, code reviews, backend design decisions and releases across DEV, QAT, PRE and PROD.',
-    chips: ['Tech lead', 'Code review', 'Release mgmt'],
+    body: 'Leading the team: sprint planning, backend design decisions, reviewing every change, and pushing reviewed code through DEV, QAT, PRE and PROD.',
+    chips: ['Tech lead', 'Code review', 'Merging & releases'],
   },
   {
     n: 'L6', title: 'System design & architecture', q: 'What should the system look like before anyone writes code?',
@@ -144,7 +144,7 @@ export const jobs = [
         bullets: [
           'Lead the engineering team through sprint planning, task allocation, code reviews and stakeholder coordination.',
           'Drive backend design and delivery across FastAPI services, AI agents and Revit integrations.',
-          'Coordinate releases across DEV, QAT, PRE and PROD.',
+          'Review the team’s code and push approved changes through DEV, QAT, PRE and PROD.',
         ],
       },
       {
