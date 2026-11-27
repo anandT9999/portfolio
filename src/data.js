@@ -15,7 +15,7 @@ export const stats = [
   { to: 4.5, dec: 1, suffix: '', sup: 'yrs', label: 'Building Python backends' },
   { to: 1, dec: 0, suffix: 'M+', label: 'Files from a TB-scale share vectorised into OpenSearch' },
   { to: 400, dec: 0, suffix: '+', label: 'FastAPI endpoints on the platform I lead' },
-  { to: 4, dec: 0, suffix: '', label: 'Environments I ship releases across' },
+  { to: 4, dec: 0, suffix: '', label: 'Environments I coordinate releases across' },
 ]
 
 export const marquee = [
@@ -38,7 +38,7 @@ export const tldr = [
   ['Core', 'Python · FastAPI · Node.js · PostgreSQL / pgvector · MongoDB · Redis · RabbitMQ'],
   ['Scale', 'Vectorising a TB-scale, 1M+ file share into OpenSearch: SQS, Celery, Lambda & ECS, Textract OCR with confidence filtering'],
   ['AI', 'Tool-calling agents on Claude, OpenAI and Gemini with RAG, streaming and LangGraph'],
-  ['Ship', 'AWS CodeBuild / CodeDeploy, Docker, Kubernetes; DEV → QAT → PRE → PROD'],
+  ['Lead', 'Sprint planning, code reviews and release coordination across DEV → QAT → PRE → PROD'],
   ['Also', 'Java, C# (Revit plugin), React'],
   ['Next', 'System design & backend architecture'],
 ]
@@ -56,7 +56,7 @@ export const journey = [
   },
   {
     n: 'L3', title: 'Cloud-native delivery', q: 'How does it run, deploy and roll back?',
-    body: 'Docker and Kubernetes, AWS EC2 / S3 / RDS / Lambda, CI/CD with CodePipeline, CodeBuild and CodeDeploy.',
+    body: 'Docker and Kubernetes, AWS EC2 / S3 / RDS / Lambda, CI/CD with CodePipeline and CodeBuild.',
     chips: ['Docker', 'Kubernetes', 'AWS', 'CI/CD'],
   },
   {
@@ -143,7 +143,7 @@ export const jobs = [
         title: 'Project Lead, Aufgang', when: 'Apr 2026 – Present',
         bullets: [
           'Lead the engineering team through sprint planning, task allocation, code reviews and stakeholder coordination.',
-          'Drive backend design and delivery across FastAPI services, AI agents, Revit integrations and AWS releases.',
+          'Drive backend design and delivery across FastAPI services, AI agents and Revit integrations.',
           'Coordinate releases across DEV, QAT, PRE and PROD.',
         ],
       },
@@ -182,7 +182,7 @@ export const stack = [
   ['Languages & frameworks', ['Python', 'FastAPI', 'Node.js', 'TypeScript', 'React', 'Flask', 'Django', 'C# (Revit)', 'Java']],
   ['Data & search', ['PostgreSQL', 'pgvector', 'MongoDB', 'OpenSearch', 'Redis', 'MySQL', 'Cassandra']],
   ['Pipelines & messaging', ['Celery', 'SQS', 'RabbitMQ', 'Textract OCR', 'Databricks', 'Kafka']],
-  ['Cloud & DevOps', ['AWS Lambda', 'ECS', 'S3', 'EC2', 'Secrets Manager', 'CodeBuild', 'CodeDeploy', 'Docker', 'Kubernetes']],
+  ['Cloud', ['AWS Lambda', 'ECS', 'S3', 'EC2', 'Textract', 'Secrets Manager', 'Docker', 'Kubernetes']],
   ['AI', ['AI agents', 'Tool calling', 'RAG', 'LangGraph', 'LangChain', 'Claude', 'OpenAI', 'Gemini / Vertex AI']],
   ['Integrations', ['Revit plugin (C#)', 'Autodesk ACC', 'Microsoft Graph', 'NYC open data', 'WebAuthn / SSO', 'Postman']],
 ]
