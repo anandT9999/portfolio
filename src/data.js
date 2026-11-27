@@ -36,7 +36,7 @@ export const tldr = [
   ['Role', 'Project Lead at Arcitech (previously Senior Python Developer)'],
   ['Now', 'FastAPI & Node.js services, TB-scale ingestion pipelines, Revit / Autodesk ACC integrations'],
   ['Core', 'Python · FastAPI · Node.js · PostgreSQL / pgvector · MongoDB · Redis · RabbitMQ'],
-  ['Scale', 'Vectorising a TB-scale, 1M+ file share into OpenSearch: SQS, Celery, Lambda & ECS, Textract OCR'],
+  ['Scale', 'Vectorising a TB-scale, 1M+ file share into OpenSearch: SQS, Celery, Lambda & ECS, Textract OCR with confidence filtering'],
   ['AI', 'Tool-calling agents on Claude, OpenAI and Gemini with RAG, streaming and LangGraph'],
   ['Ship', 'AWS CodeBuild / CodeDeploy, Docker, Kubernetes; DEV → QAT → PRE → PROD'],
   ['Also', 'Java, C# (Revit plugin), React'],
@@ -61,8 +61,8 @@ export const journey = [
   },
   {
     n: 'L4', title: 'Data at terabyte scale', q: 'What happens at a million files and terabytes of data?',
-    body: 'Vectorising a TB-scale, 1M+ file share into OpenSearch. Files are routed by size through SQS to Lambda or ECS, text-layer PDFs keep their native text while scans go through Textract OCR, and a resumable reconciliation job keeps the index in sync with the live filesystem.',
-    chips: ['OpenSearch', 'SQS', 'Lambda / ECS', 'Textract', 'pgvector'],
+    body: 'Vectorising a TB-scale, 1M+ file share into OpenSearch. Files are routed by size through SQS to Lambda or ECS, text-layer PDFs keep their native text while scans go through Textract OCR with quality checks and confidence filtering, and a resumable reconciliation job keeps the index in sync with the live filesystem.',
+    chips: ['OpenSearch', 'SQS', 'Lambda / ECS', 'Textract', 'OCR quality', 'pgvector'],
   },
   {
     n: 'L5', title: 'Ownership', q: 'How does a team ship it safely?',
@@ -82,7 +82,7 @@ export const feature = {
   bullets: [
     'Vectorised a TB-scale, 1M+ file network share into OpenSearch, so every project file is searchable by meaning, not just by name.',
     'Large data handled efficiently: files are routed by size through SQS to Lambda or ECS workers, and a resumable reconciliation job keeps the index in sync without re-processing everything.',
-    'OCR quality first: text-layer PDFs keep their native text, scanned pages go through AWS Textract, so embeddings are built from the most accurate text available.',
+    'OCR quality first: text-layer PDFs keep their native text, scans go through AWS Textract, and OCR quality checks with confidence filtering catch low-confidence text before it is embedded.',
     'Part of a platform with 400+ FastAPI endpoints across 41 modules on MongoDB, PostgreSQL / pgvector, OpenSearch, Redis and RabbitMQ.',
     'Migrated the Node.js / Express backend to FastAPI while keeping the API wire-compatible.',
   ],
@@ -92,6 +92,7 @@ export const feature = {
     ['route', 'by size → SQS'],
     ['extract', 'native text layer when present'],
     ['ocr', 'Textract on Lambda / ECS for scans'],
+    ['verify', 'quality checks · confidence filtering'],
     ['chunk + embed', 'semantic vectors'],
     ['index', 'OpenSearch'],
     ['reconcile ↺', 'resumable · keeps index = filesystem', true],
@@ -151,7 +152,7 @@ export const jobs = [
         title: 'Senior Python Developer', when: 'Jun 2025 – Apr 2026',
         bullets: [
           'Vectorised a TB-scale, 1M+ file share into OpenSearch with Celery and SQS pipelines for OCR, chunking and embeddings.',
-          'Kept large-data processing efficient and accurate: size-routed Lambda / ECS workers, native text for text-layer PDFs, Textract OCR for scans, and resumable reconciliation.',
+          'Kept large-data processing efficient and accurate: size-routed Lambda / ECS workers, native text for text-layer PDFs, Textract OCR for scans with quality checks and confidence filtering, and resumable reconciliation.',
           'Built AI agents (chat assistant, DOB) on Claude, OpenAI and Gemini with tool calling, RAG and real-time streaming.',
           'Migrated the Node.js backend to FastAPI without breaking the API; integrated Autodesk ACC, a C# Revit plugin and Microsoft Graph.',
         ],
